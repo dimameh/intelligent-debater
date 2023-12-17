@@ -1,73 +1,74 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+** требования **
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Авторизация
+  - интеграция с вк и гугл
+Профиль юзера
+ - Имя
+ - Ник
+ - почта
+ - фотка
+ - о себе
+ - количество открытых споров
+ - количество решающих аргументов
+ - стена споров (споры в которых он участвует)
+ - закрытые споры с его участием
+Спор
+(ТЕЗИСЫ - утверждения или аргументы по определенной теме)
+  - название
+  - описание
+  - карта тезисов
+  - редактирование внутри тезиса полной аргументации.
+  - разделение на раунды
+  - древовидная структура тезисов
+  - разные виды соединений между тезисами
+  - закрытие редактирования тезисов в предыдущих раундах
+  - голосование за тезисы
+  - совместное редактирование тезисов
+    - добавление картинок
+    - графики
+    - ссылки
+  - разбиение на команды
+  - голосование за команды
+  - Нейронная сеть для определения плохих тезисов, например бессмысленных или матерных
+Поиск
+  - теги
+  - название
+  - тезисы
+  - авторы
+  - закрытые споры
+  - открытые споры
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+Структура древа тезисов:
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Создание и редактирование тезисов: Пользователи могут создавать новые тезисы и редактировать существующие. Тезисы будут представлять собой утверждения или аргументы по определенной теме.
 
-## Installation
+Иерархическая структура: Тезисы могут быть организованы в виде древовидной структуры, где каждый тезис может иметь дочерние тезисы. Это позволит пользователю строить аргументацию и связывать тезисы друг с другом.
 
-```bash
-$ pnpm install
-```
+Комментарии и обсуждение: Пользователи могут оставлять комментарии к тезисам, выражать свое мнение и аргументировать свою позицию. Это способствует обсуждению и диалогу.
 
-## Running the app
+Возможность открывать и скрывать тезисы: Пользователи могут разворачивать и скрывать древовидную структуру тезисов для более удобного просмотра.
 
-```bash
-# development
-$ pnpm run start
+Поддержка реального времени: Используйте WebSocket для создания функциональности реального времени, чтобы пользователи могли видеть изменения и комментарии других пользователей в режиме реального времени.
 
-# watch mode
-$ pnpm run start:dev
+Рейтинг и голосование: Дайте пользователям возможность голосовать за тезисы или комментарии, что поможет выявить популярные и важные аргументы.
 
-# production mode
-$ pnpm run start:prod
-```
+Ведение спора:
 
-## Test
+С использованием такой структуры древа тезисов можно вести спор или дискуссию следующим образом:
 
-```bash
-# unit tests
-$ pnpm run test
+Создание спора: Пользователь начинает новый спор по определенной теме и создает первый тезис.
 
-# e2e tests
-$ pnpm run test:e2e
+Древо аргументов: Для развития спора пользователь добавляет новые тезисы, связанные с начальным тезисом. Они могут быть как "за", так и "против" данного тезиса.
 
-# test coverage
-$ pnpm run test:cov
-```
+Обсуждение: Пользователи могут комментировать тезисы, высказывать свои аргументы и контраргументы.
 
-## Support
+Развитие дискуссии: Древо тезисов будет позволять участникам развивать дискуссию, создавая новые тезисы, связанные с существующими. Это способствует более глубокому и аргументированному обсуждению.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Голосование и оценка: Пользователи могут голосовать за тезисы и комментарии, помогая выявить наиболее значимые аргументы.
 
-## Stay in touch
+Завершение спора: Спор может быть завершен, когда достигнуто соглашение или когда достигнут определенный лимит времени или количества тезисов.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
 
-Nest is [MIT licensed](LICENSE).
+**Чето такое в общих чертах**
